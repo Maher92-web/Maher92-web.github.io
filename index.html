@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maher Sheikhi | Clinical Engineer & Medical Device Advisor</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Maher Sheikhi - Clinical Engineer specializing in BCI, Neurotechnology, and Medical Device Advisory. Expert in AI-driven healthcare solutions and cochlear implants.">
+    <meta name="keywords" content="Clinical Engineer, BCI, Brain Computer Interface, Neurotechnology, Medical Devices, AI Healthcare, Cochlear Implant, EEG, EMG, Munich">
+    <meta name="author" content="Maher Sheikhi">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Maher Sheikhi | Clinical Engineer & Medical Device Advisor">
+    <meta property="og:description" content="Clinical Engineer specializing in BCI, Neurotechnology, and Medical Device Advisory">
+    <meta property="og:image" content="https://mahersheikhi.github.io/Maher%20Sheikhi%20Aboumasoudi.png">
+    <meta property="og:url" content="https://mahersheikhi.github.io">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maher Sheikhi | Clinical Engineer">
+    <meta name="twitter:description" content="Clinical Engineer specializing in BCI and Neurotechnology">
+    <meta name="twitter:image" content="https://mahersheikhi.github.io/Maher%20Sheikhi%20Aboumasoudi.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <style>
         * {
             margin: 0;
@@ -99,6 +121,37 @@
             background: #fff;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1a1a1a;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #333;
+            transform: translateY(-5px);
+        }
+
         /* Container */
         .container {
             max-width: 1200px;
@@ -177,6 +230,7 @@
             display: flex;
             gap: 20px;
             animation: fadeInUp 1.2s ease-out;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -494,6 +548,7 @@
             justify-content: center;
             gap: 30px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -586,11 +641,21 @@
             section {
                 padding: 80px 0;
             }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="scroll-indicator" id="scrollBar"></div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">↑</div>
     
     <nav id="navbar">
         <div class="nav-container">
@@ -620,6 +685,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get in touch</a>
                     <a href="#about" class="btn btn-secondary">Learn more</a>
+                    <a href="Maher_Sheikhi_CV.pdf" download class="btn btn-secondary">Download CV</a>
                 </div>
             </div>
         </div>
@@ -864,7 +930,6 @@
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="https://mahersheikhi.github.io" target="_blank">Website</a>
                 <a href="mailto:mahershei67@gmail.com">Email</a>
                 <a href="tel:+4915901610157">Phone</a>
                 <a href="https://github.com/mahersheikhi" target="_blank">GitHub</a>
@@ -892,6 +957,23 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Active nav link on scroll
