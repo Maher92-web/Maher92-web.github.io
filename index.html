@@ -33,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* ===== Scroll reveal ===== */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -44,7 +43,6 @@
             transform: translateY(0);
         }
 
-        /* ===== Nav ===== */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -115,7 +113,6 @@
             position: relative;
         }
 
-        /* ===== Hero ===== */
         #home {
             background: radial-gradient(circle at 15% 20%, #2a2a2a 0%, transparent 45%),
                         radial-gradient(circle at 85% 80%, #333 0%, transparent 40%),
@@ -201,7 +198,6 @@
         .btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); }
         .btn-secondary:hover { background: #fff; color: var(--black); transform: translateY(-5px); }
 
-        /* ===== Section headers ===== */
         .section-header { margin-bottom: 55px; }
         .section-label {
             font-size: 0.85em; color: var(--gray-500); text-transform: uppercase;
@@ -212,7 +208,6 @@
             letter-spacing: -1px;
         }
 
-        /* ===== About ===== */
         #about { background: var(--gray-100); }
         .about-content { max-width: 950px; margin: 0 auto; width: 100%; }
         .about-content p { font-size: 1.08em; line-height: 1.85; color: #444; margin-bottom: 22px; }
@@ -236,7 +231,6 @@
         }
         .info-card-value { font-size: 1em; color: var(--black); font-weight: 600; }
 
-        /* ===== Experience ===== */
         #experience { background: #fff; }
 
         .stats-grid {
@@ -286,7 +280,6 @@
         .timeline-list li { margin-bottom: 8px; line-height: 1.6; }
         .timeline-list li strong { color: var(--black); }
 
-        /* ===== Skills ===== */
         #skills { background: var(--black); color: #fff; }
         #skills .section-title { color: #fff; }
         #skills .section-label { color: #999; }
@@ -328,7 +321,6 @@
         .cert-name { font-weight: 700; font-size: 0.98em; }
         .cert-meta { font-size: 0.82em; color: #aaa; margin-top: 2px; }
 
-        /* ===== Projects (NEW) ===== */
         #projects { background: var(--gray-100); }
 
         .projects-grid {
@@ -378,7 +370,6 @@
         }
         .project-link:hover { gap: 14px; }
 
-        /* ===== Contact ===== */
         #contact { background: #fff; text-align: center; }
         .contact-content { max-width: 650px; margin: 0 auto; width: 100%; }
         .contact-links { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; }
@@ -390,12 +381,10 @@
             background: #333; transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
 
-        /* ===== Footer ===== */
         footer { background: var(--black); color: #fff; padding: 45px 0; text-align: center; }
         .footer-links { display: flex; justify-content: center; gap: 28px; margin-bottom: 20px; flex-wrap: wrap; }
         .footer-links a { color: #999; text-decoration: none; transition: all 0.3s; }
         .footer-links a:hover { color: #fff; }
-        .hobbies { color: #777; font-size: 0.85em; margin-bottom: 12px; letter-spacing: 0.5px; }
 
         .scroll-indicator {
             position: fixed; top: 0; left: 0; height: 3px; background: var(--black);
@@ -722,7 +711,7 @@
         </div>
     </section>
 
-    <!-- PROJECTS (NEW) -->
+    <!-- PROJECTS -->
     <section id="projects">
         <div class="container">
             <div class="reveal">
@@ -747,6 +736,13 @@
                                 <span class="tech-pill">Pillow</span>
                             </div>
                             <a href="https://github.com/mahersheikhi/AI_NeuroScan" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-cover"><span class="project-number">02</span></div>
+                        <div class="project-body">
+                            <div class="project-title">Stock AI Agent</div>
                             <div class="project-subtitle">AI Assistant for Stock Analysis</div>
                             <div class="project-desc">
                                 A modular investment analysis platform combining real-time market data, technical analysis, Google News RSS feeds, risk assessments, watchlist screening, and explainable reports. Multi-layered architecture featuring providers, analysis agents, shared services, CLI and Streamlit interfaces, with automated testing via pytest.
@@ -757,7 +753,7 @@
                                 <span class="tech-pill">Streamlit</span>
                                 <span class="tech-pill">Yahoo Finance</span>
                             </div>
-                            <a href="#" target="_blank" class="project-link">View Project →</a>
+                            <a href="https://github.com/mahersheikhi/ai_stock_agent" target="_blank" class="project-link">View Project →</a>
                         </div>
                     </div>
                 </div>
@@ -788,7 +784,6 @@
 
     <footer>
         <div class="container">
-            <div class="hobbies">⚽ Football &nbsp;·&nbsp; 🏄 SUP &nbsp;·&nbsp; 🏊 Swimming &nbsp;·&nbsp; 🍳 Cooking</div>
             <div class="footer-links">
                 <a href="mailto:mahershei67@gmail.com">Email</a>
                 <a href="tel:+4915901610157">Phone</a>
