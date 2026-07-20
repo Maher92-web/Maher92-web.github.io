@@ -311,7 +311,7 @@
         .cert-card {
             background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
             border-radius: 16px; padding: 22px; display: flex; align-items: center; gap: 16px;
-            transition: all 0.3s;
+            transition: all 0.3s; cursor: pointer;
         }
         .cert-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
         .cert-icon {
@@ -320,6 +320,30 @@
         }
         .cert-name { font-weight: 700; font-size: 0.98em; }
         .cert-meta { font-size: 0.82em; color: #aaa; margin-top: 2px; }
+        .cert-verify {
+            font-size: 0.78em; color: #fff; text-decoration: underline;
+            margin-top: 6px; display: inline-block;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+            display: none; align-items: center; justify-content: center;
+            z-index: 2000; padding: 30px;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox-content {
+            background: #fff; border-radius: 16px; max-width: 700px; width: 100%;
+            padding: 30px; position: relative; text-align: center;
+        }
+        .lightbox-close {
+            position: absolute; top: 14px; right: 18px; font-size: 1.6em;
+            cursor: pointer; color: #333; background: none; border: none;
+        }
+        .lightbox-img { width: 100%; border-radius: 10px; margin-bottom: 16px; border: 1px solid #eee; }
+        .lightbox-title { font-size: 1.2em; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+        .lightbox-meta { font-size: 0.9em; color: var(--gray-700); margin-bottom: 14px; }
+        .lightbox-note { font-size: 0.8em; color: var(--gray-500); }
 
         #projects { background: var(--gray-100); }
 
@@ -451,7 +475,7 @@
                         <h1 class="hero-title">Maher Sheikhi</h1>
                     </div>
                 </div>
-                <p class="hero-subtitle">Clinical Engineer &amp; Medical Technology Expert — Certified Medical Device Advisor (§83 MPDG, TÜV) specializing in neurotechnology and AI-driven BCI systems.</p>
+                <p class="hero-subtitle">Clinical Engineer &amp; Medical Technology Expert — Certified Medical Device Advisor (§83 MPDG, TÜV) specialising in neurotechnology and AI-driven medical devices.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get in touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
@@ -473,9 +497,9 @@
                 <div class="about-content">
                     <p>Passionate Clinical Engineer dedicated to advancing artificial intelligence and innovative technologies in medical applications and medical engineering. I believe in the transformative power of technology to revolutionize healthcare delivery and improve patient outcomes through intelligent systems and data-driven solutions.</p>
 
-                    <p>With particular focus on Brain-Computer Interface (BCI) and Neurotechnology, I explore how cutting-edge technologies can bridge the gap between human neurology and assistive devices. During my Master's studies, I gained hands-on experience with computer vision applications and BCI systems, working on projects involving EEG, MEG and EMG signal processing at Charité University's Clinical Neurotechnology Lab.</p>
+                    <p>With particular focus on Neurotechnology and Brain-Computer Interface (BCI), I explore how cutting-edge technologies can bridge the gap between human neurology and assistive devices. During my Master's studies, I gained hands-on experience with computer vision applications and BCI systems, working on projects involving EEG, MEG and EMG signal processing at Charité University's Clinical Neurotechnology Lab.</p>
 
-                    <p>Currently working at MED-EL as a Clinical Engineer, I combine over 10 years of electrical engineering and medical technology experience from organizations including BMW Group, Arthrex, Fresenius Medical Care, and Charité University. My main goal is to understand how innovative technologies can be applied to solve real healthcare problems, creating practical solutions that make a meaningful difference in patient care and medical practice.</p>
+                    <p>Currently working at MED-EL as a Clinical Engineer, I combine over 10 years of electrical engineering and medical technology experience from companies including BMW Group, Arthrex, Fresenius Medical Care, and Charité University. My main goal is to understand how innovative technologies can be applied to solve real healthcare problems, creating practical solutions that make a meaningful difference in patient care and medical practice.</p>
 
                     <div class="info-cards">
                         <div class="info-card">
@@ -493,9 +517,9 @@
                         <div class="info-card">
                             <div class="info-card-label">Speak:</div>
                             <div class="info-card-value" style="display: flex; flex-direction: column; gap: 5px;">
-                                <span>• German (C1)</span>
-                                <span>• English (C1)</span>
-                                <span>• Persian (Native)</span>
+                                <span>• English</span>
+                                <span>• German</span>
+                                <span>• Persian</span>
                             </div>
                         </div>
                     </div>
@@ -684,22 +708,22 @@
                     <div class="skill-category">
                         <div class="skill-category-title">🌐 Languages</div>
                         <div class="skill-tags">
-                            <span class="skill-tag">Persian — Native</span>
-                            <span class="skill-tag">German — C1</span>
-                            <span class="skill-tag">English — C1</span>
+                            <span class="skill-tag">Persian </span>
+                            <span class="skill-tag">German </span>
+                            <span class="skill-tag">English </span>
                         </div>
                     </div>
                 </div>
 
                 <div class="cert-strip">
-                    <div class="cert-card">
+                    <div class="cert-card" onclick="openLightbox('mpdg')">
                         <div class="cert-icon">✓</div>
                         <div>
                             <div class="cert-name">Medical Device Advisor (Medizinprodukteberater)</div>
                             <div class="cert-meta">TÜV SÜD Akademie — §83 MPDG · 02/2025</div>
                         </div>
                     </div>
-                    <div class="cert-card">
+                    <div class="cert-card" onclick="openLightbox('genai')">
                         <div class="cert-icon">✓</div>
                         <div>
                             <div class="cert-name">Generative AI for Healthcare</div>
@@ -710,6 +734,18 @@
             </div>
         </div>
     </section>
+
+    <!-- Certificate Lightbox -->
+    <div class="lightbox" id="certLightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img class="lightbox-img" id="lightboxImg" src="" alt="Certificate preview">
+            <div class="lightbox-title" id="lightboxTitle"></div>
+            <div class="lightbox-meta" id="lightboxMeta"></div>
+            <a id="lightboxVerify" href="#" target="_blank" class="cert-verify" style="color:#000;"></a>
+            <div class="lightbox-note" id="lightboxNote"></div>
+        </div>
+    </div>
 
     <!-- PROJECTS -->
     <section id="projects">
@@ -844,6 +880,51 @@
             });
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Certificate lightbox
+        const certData = {
+            mpdg: {
+                img: 'cert-mpdg-cropped.png',
+                title: 'Medizinprodukteberater nach § 83 MPDG',
+                meta: 'Issued by TÜV SÜD Akademie · Munich, 02/2025',
+                verifyText: '',
+                verifyUrl: '',
+                note: 'Full certificate available on request.'
+            },
+            genai: {
+                img: 'cert-genai.png',
+                title: 'Generative AI for Healthcare',
+                meta: 'Google Cloud, via Coursera · 03/2026',
+                verifyText: 'Verify this certificate →',
+                verifyUrl: 'https://coursera.org/verify/XGZZ6A9QQXOZ',
+                note: ''
+            }
+        };
+
+        function openLightbox(key) {
+            const data = certData[key];
+            document.getElementById('lightboxImg').src = data.img;
+            document.getElementById('lightboxTitle').textContent = data.title;
+            document.getElementById('lightboxMeta').textContent = data.meta;
+            const verifyLink = document.getElementById('lightboxVerify');
+            if (data.verifyUrl) {
+                verifyLink.href = data.verifyUrl;
+                verifyLink.textContent = data.verifyText;
+                verifyLink.style.display = 'inline-block';
+            } else {
+                verifyLink.style.display = 'none';
+            }
+            document.getElementById('lightboxNote').textContent = data.note;
+            document.getElementById('certLightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('certLightbox').classList.remove('active');
+        }
+
+        document.getElementById('certLightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'certLightbox') closeLightbox();
+        });
     </script>
 </body>
 </html>
