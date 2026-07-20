@@ -347,6 +347,12 @@
 
         #projects { background: var(--gray-100); }
 
+        .projects-subheading {
+            font-size: 1.1em; font-weight: 800; color: var(--black);
+            margin: 50px 0 25px; padding-top: 10px; border-top: 2px solid #ddd;
+        }
+        .projects-subheading:first-of-type { border-top: none; margin-top: 0; }
+
         .projects-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px;
         }
@@ -475,7 +481,7 @@
                         <h1 class="hero-title">Maher Sheikhi</h1>
                     </div>
                 </div>
-                <p class="hero-subtitle">Clinical Engineer &amp; Medical Technology Expert — Certified Medical Device Advisor (§83 MPDG, TÜV) specialising in neurotechnology and AI-driven medical devices.</p>
+                <p class="hero-subtitle">Clinical Engineer &amp; Medical Technology Expert — Certified Medical Device Advisor (§83 MPDG, TÜV) specializing in neurotechnology and AI-driven BCI systems.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get in touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
@@ -497,9 +503,9 @@
                 <div class="about-content">
                     <p>Passionate Clinical Engineer dedicated to advancing artificial intelligence and innovative technologies in medical applications and medical engineering. I believe in the transformative power of technology to revolutionize healthcare delivery and improve patient outcomes through intelligent systems and data-driven solutions.</p>
 
-                    <p>With particular focus on Neurotechnology and Brain-Computer Interface (BCI), I explore how cutting-edge technologies can bridge the gap between human neurology and assistive devices. During my Master's studies, I gained hands-on experience with computer vision applications and BCI systems, working on projects involving EEG, MEG and EMG signal processing at Charité University's Clinical Neurotechnology Lab.</p>
+                    <p>With particular focus on Brain-Computer Interface (BCI) and Neurotechnology, I explore how cutting-edge technologies can bridge the gap between human neurology and assistive devices. During my Master's studies, I gained hands-on experience with computer vision applications and BCI systems, working on projects involving EEG, MEG and EMG signal processing at Charité University's Clinical Neurotechnology Lab.</p>
 
-                    <p>Currently working at MED-EL as a Clinical Engineer, I combine over 10 years of electrical engineering and medical technology experience from companies including BMW Group, Arthrex, Fresenius Medical Care, and Charité University. My main goal is to understand how innovative technologies can be applied to solve real healthcare problems, creating practical solutions that make a meaningful difference in patient care and medical practice.</p>
+                    <p>Currently working at MED-EL as a Clinical Engineer, I combine over 10 years of electrical engineering and medical technology experience from organizations including BMW Group, Arthrex, Fresenius Medical Care, and Charité University. I am also a published author, having contributed a paper on an intelligent optimization algorithm for interior lighting design using MATLAB. My main goal is to understand how innovative technologies can be applied to solve real healthcare problems, creating practical solutions that make a meaningful difference in patient care and medical practice.</p>
 
                     <div class="info-cards">
                         <div class="info-card">
@@ -517,9 +523,9 @@
                         <div class="info-card">
                             <div class="info-card-label">Speak:</div>
                             <div class="info-card-value" style="display: flex; flex-direction: column; gap: 5px;">
-                                <span>• English</span>
-                                <span>• German</span>
-                                <span>• Persian</span>
+                                <span>• German (C1)</span>
+                                <span>• English (C1)</span>
+                                <span>• Persian (Native)</span>
                             </div>
                         </div>
                     </div>
@@ -708,9 +714,9 @@
                     <div class="skill-category">
                         <div class="skill-category-title">🌐 Languages</div>
                         <div class="skill-tags">
-                            <span class="skill-tag">Persian </span>
-                            <span class="skill-tag">German </span>
-                            <span class="skill-tag">English </span>
+                            <span class="skill-tag">Persian — Native</span>
+                            <span class="skill-tag">German — C1</span>
+                            <span class="skill-tag">English — C1</span>
                         </div>
                     </div>
                 </div>
@@ -756,6 +762,7 @@
                     <h2 class="section-title">Things I've Built</h2>
                 </div>
 
+                <div class="projects-subheading">💻 Personal Projects</div>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-cover"><span class="project-number">01</span></div>
@@ -790,6 +797,66 @@
                                 <span class="tech-pill">Yahoo Finance</span>
                             </div>
                             <a href="https://github.com/mahersheikhi/ai_stock_agent" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-subheading">🎓 University Projects</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-cover"><span class="project-number">03</span></div>
+                        <div class="project-body">
+                            <div class="project-title">Bio-Inspired Computer Vision</div>
+                            <div class="project-subtitle">TU Berlin · Apr 2020 – Aug 2020</div>
+                            <div class="project-desc">
+                                Implementation of neural recordings and spatiotemporal filtering in Python, based on bio-inspired event-based vision research (dynamic vision sensors mimicking retinal processing).
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">Computer Vision</span>
+                                <span class="tech-pill">Neuroscience</span>
+                            </div>
+                            <a href="https://sites.google.com/view/guillermogallego/teaching/bio-inspired-computer-vision" target="_blank" class="project-link">View Course & Paper →</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-cover"><span class="project-number">04</span></div>
+                        <div class="project-body">
+                            <div class="project-title">Brain-Computer Interfacing</div>
+                            <div class="project-subtitle">TU Berlin · Oct 2020 – Mar 2021</div>
+                            <div class="project-desc">
+                                Explored structural and functional brain connectivity, and simulated whole-brain dynamics based on the connectome — bridging neuroscience theory with computational brain modeling.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-pill">Connectome</span>
+                                <span class="tech-pill">Brain Simulation</span>
+                                <span class="tech-pill">Python</span>
+                            </div>
+                            <a href="https://github.com/mahersheikhi/Brain-Computer-Interfacing---From-Neurons-to-Data" target="_blank" class="project-link">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-subheading">📄 Publications</div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-cover"><span class="project-number">05</span></div>
+                        <div class="project-body">
+                            <div class="project-title">Intelligent Optimize Interior Lighting</div>
+                            <div class="project-subtitle">MATLAB Application for Intelligent Optimization Algorithm</div>
+                            <div class="project-desc">
+                                Published paper presenting a MATLAB-based application that uses an intelligent optimization algorithm to improve interior lighting design efficiency.
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-pill">MATLAB</span>
+                                <span class="tech-pill">Optimization Algorithm</span>
+                                <span class="tech-pill">Lighting Design</span>
+                            </div>
+                            <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+                                <a href="https://en.civilica.com/doc/710274/" target="_blank" class="project-link">Read Paper →</a>
+                                <a href="CertificatePaper.png" target="_blank" class="project-link">View Certificate →</a>
+                            </div>
                         </div>
                     </div>
                 </div>
