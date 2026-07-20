@@ -9,6 +9,14 @@
     <meta name="keywords" content="Clinical Engineer, BCI, Brain Computer Interface, Neurotechnology, Medical Devices, AI Healthcare, Cochlear Implant, EEG, EMG, Munich">
     <meta name="author" content="Maher Sheikhi">
 
+    <meta property="og:title" content="Maher Sheikhi | Clinical Engineer & Medical Technology Expert">
+    <meta property="og:description" content="Certified Medical Device Advisor (§83 MPDG) specializing in neurotechnology, BCI, and AI-driven healthcare solutions.">
+    <meta property="og:image" content="Maher Sheikhi Aboumasoudi.png">
+    <meta property="og:url" content="https://mahersheikhi.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="Maher Sheikhi Aboumasoudi.png">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -281,6 +289,25 @@
         .timeline-list li strong { color: var(--black); }
 
         #skills { background: var(--black); color: #fff; }
+
+        /* ===== Education ===== */
+        #education { background: var(--gray-100); }
+
+        .education-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;
+        }
+        .education-card {
+            background: #fff; padding: 32px; border-radius: 18px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.06); transition: all 0.3s;
+            border-left: 4px solid var(--black);
+        }
+        .education-card:hover { transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
+        .education-degree { font-size: 1.25em; font-weight: 800; color: var(--black); margin-bottom: 6px; }
+        .education-school { font-size: 1em; color: var(--gray-700); font-style: italic; margin-bottom: 10px; }
+        .education-date {
+            display: inline-block; font-size: 0.85em; color: var(--gray-700);
+            background: var(--gray-100); padding: 5px 15px; border-radius: 20px; font-weight: 600;
+        }
         #skills .section-title { color: #fff; }
         #skills .section-label { color: #999; }
 
@@ -310,8 +337,8 @@
         }
         .cert-card {
             background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 16px; padding: 22px; display: flex; align-items: center; gap: 16px;
-            transition: all 0.3s; cursor: pointer;
+            border-radius: 16px; padding: 22px; display: flex; align-items: flex-start; gap: 16px;
+            transition: all 0.3s;
         }
         .cert-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
         .cert-icon {
@@ -319,11 +346,12 @@
             display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;
         }
         .cert-name { font-weight: 700; font-size: 0.98em; }
-        .cert-meta { font-size: 0.82em; color: #aaa; margin-top: 2px; }
-        .cert-verify {
-            font-size: 0.78em; color: #fff; text-decoration: underline;
-            margin-top: 6px; display: inline-block;
+        .cert-meta { font-size: 0.82em; color: #aaa; margin-top: 2px; margin-bottom: 10px; }
+        .cert-link {
+            font-size: 0.85em; font-weight: 700; color: #fff; text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s;
         }
+        .cert-link:hover { border-bottom-color: #fff; }
 
         /* Lightbox */
         .lightbox {
@@ -458,6 +486,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -478,6 +507,7 @@
                     <img class="hero-profile-image" src="Maher Sheikhi Aboumasoudi.png" alt="Maher Sheikhi">
                     <div>
                         <div class="hero-badge">Munich · Germany</div>
+                        <div class="hero-badge" style="margin-left: 8px;">Open to New Opportunities</div>
                         <h1 class="hero-title">Maher Sheikhi</h1>
                     </div>
                 </div>
@@ -485,7 +515,8 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get in touch</a>
                     <a href="#projects" class="btn btn-secondary">View Projects</a>
-                    <a href="Maher_Sheikhi_CV.pdf" download="Maher_Sheikhi_CV.pdf" class="btn btn-secondary">📄 Download CV</a>
+                    <a href="Maher_Sheikhi_CV.pdf" target="_blank" class="btn btn-secondary">📄 View Resume</a>
+                    <a href="Maher_Sheikhi_CV.pdf" download="Maher_Sheikhi_CV.pdf" class="btn btn-secondary">⬇ Download CV</a>
                 </div>
             </div>
         </div>
@@ -523,9 +554,9 @@
                         <div class="info-card">
                             <div class="info-card-label">Speak:</div>
                             <div class="info-card-value" style="display: flex; flex-direction: column; gap: 5px;">
-                                <span>• German (C1)</span>
-                                <span>• English (C1)</span>
-                                <span>• Persian (Native)</span>
+                                <span>• German</span>
+                                <span>• English</span>
+                                <span>• Persian</span>
                             </div>
                         </div>
                     </div>
@@ -642,6 +673,32 @@
         </div>
     </section>
 
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="container">
+            <div class="reveal">
+                <div class="section-header">
+                    <div class="section-label">Education</div>
+                    <h2 class="section-title">Academic Background</h2>
+                </div>
+
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-degree">M.Sc. Electrical Engineering</div>
+                        <div class="education-school">Technical University of Berlin (TU Berlin), Berlin, Germany</div>
+                        <div class="education-date">01/2020 — 01/2022</div>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-degree">B.Sc. Electrical Engineering</div>
+                        <div class="education-school">Azad University, Isfahan, Iran</div>
+                        <div class="education-date">01/2011 — 01/2017</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SKILLS -->
     <section id="skills">
         <div class="container">
@@ -714,26 +771,28 @@
                     <div class="skill-category">
                         <div class="skill-category-title">🌐 Languages</div>
                         <div class="skill-tags">
-                            <span class="skill-tag">Persian — Native</span>
-                            <span class="skill-tag">German — C1</span>
-                            <span class="skill-tag">English — C1</span>
+                            <span class="skill-tag">Persian</span>
+                            <span class="skill-tag">German</span>
+                            <span class="skill-tag">English</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="cert-strip">
-                    <div class="cert-card" onclick="openLightbox('mpdg')">
+                    <div class="cert-card">
                         <div class="cert-icon">✓</div>
                         <div>
                             <div class="cert-name">Medical Device Advisor (Medizinprodukteberater)</div>
                             <div class="cert-meta">TÜV SÜD Akademie — §83 MPDG · 02/2025</div>
+                            <a href="javascript:void(0)" onclick="openLightbox('mpdg')" class="cert-link">View Certificate →</a>
                         </div>
                     </div>
-                    <div class="cert-card" onclick="openLightbox('genai')">
+                    <div class="cert-card">
                         <div class="cert-icon">✓</div>
                         <div>
                             <div class="cert-name">Generative AI for Healthcare</div>
                             <div class="cert-meta">Google Cloud · 03/2026</div>
+                            <a href="https://coursera.org/verify/XGZZ6A9QQXOZ" target="_blank" class="cert-link">Verify Certificate →</a>
                         </div>
                     </div>
                 </div>
@@ -877,6 +936,7 @@
                     <div class="contact-links">
                         <a href="mailto:mahershei67@gmail.com" class="contact-link">Email Me</a>
                         <a href="tel:+4915901610157" class="contact-link">Call Me</a>
+                        <a href="Maher_Sheikhi_CV.pdf" target="_blank" class="contact-link">View Resume</a>
                         <a href="https://www.linkedin.com/in/maher-sheikhi/" target="_blank" class="contact-link">LinkedIn</a>
                         <a href="https://github.com/mahersheikhi" target="_blank" class="contact-link">GitHub</a>
                     </div>
@@ -957,14 +1017,6 @@
                 verifyText: '',
                 verifyUrl: '',
                 note: 'Full certificate available on request.'
-            },
-            genai: {
-                img: 'cert-genai.png',
-                title: 'Generative AI for Healthcare',
-                meta: 'Google Cloud, via Coursera · 03/2026',
-                verifyText: 'Verify this certificate →',
-                verifyUrl: 'https://coursera.org/verify/XGZZ6A9QQXOZ',
-                note: ''
             }
         };
 
@@ -974,13 +1026,7 @@
             document.getElementById('lightboxTitle').textContent = data.title;
             document.getElementById('lightboxMeta').textContent = data.meta;
             const verifyLink = document.getElementById('lightboxVerify');
-            if (data.verifyUrl) {
-                verifyLink.href = data.verifyUrl;
-                verifyLink.textContent = data.verifyText;
-                verifyLink.style.display = 'inline-block';
-            } else {
-                verifyLink.style.display = 'none';
-            }
+            verifyLink.style.display = 'none';
             document.getElementById('lightboxNote').textContent = data.note;
             document.getElementById('certLightbox').classList.add('active');
         }
